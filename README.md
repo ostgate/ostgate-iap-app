@@ -24,7 +24,8 @@
 Ostgate reaches Google Compute Engine VMs through Google's Identity-Aware Proxy (IAP): SSH
 terminals, RDP desktops, SFTP and TCP tunnels to instances with no public IP and no bastion
 host. It runs entirely on your Mac and talks to Google's APIs as you; there is no Ostgate
-server in the path.
+server in the path. If you know Google's Windows-only IAP Desktop, Ostgate is IAP Desktop
+for the Mac: the same IAP TCP forwarding and project setup, as a native macOS app.
 
 This repository hosts the release builds, release notes and issue tracker. The source code is
 not public.
