@@ -1,0 +1,54 @@
+name: Bug report
+description: Something in Ostgate does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please leave out project IDs, instance names, IP addresses and anything else you would not publish.
+        Security problems go to support@ostgate.app, not here.
+  - type: input
+    id: version
+    attributes:
+      label: Ostgate version
+      description: Ostgate > About Ostgate, for example "Version 0.0.1 (build 1)".
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS 26.3
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Sign-in and accounts
+        - Resources and search
+        - SSH terminal
+        - RDP
+        - SFTP
+        - Tunnels and forwards
+        - Terminal integration (~/.ssh/config)
+        - License and trial
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you saw instead. Connection Doctor's message helps if it showed one.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.

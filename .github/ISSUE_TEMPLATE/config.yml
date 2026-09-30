@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Troubleshooting
+    url: https://ostgate.app/docs#troubleshooting
+    about: Connection Doctor messages, IAP firewall rule and IAM roles, common fixes.
+  - name: License keys and other questions
+    url: https://ostgate.app/docs#licence
+    about: How the trial and license keys work. For a key, write to support@ostgate.app.
