@@ -13,6 +13,7 @@
   <a href="https://github.com/ostgate/ostgate-iap-app/releases/latest"><b>Download the latest release</b></a> ·
   <a href="https://ostgate.app">Website</a> ·
   <a href="https://ostgate.app/docs">Docs</a> ·
+  <a href="https://ostgate.app/security">Security</a> ·
   <a href="CHANGELOG.md">Release notes</a>
 </p>
 
@@ -115,10 +116,10 @@ route through the Cloud Console and gcloud first:
 - [IAP TCP forwarding: the 35.235.240.0/20 firewall rule and IAM checklist](https://ostgate.app/guides/iap-tcp-forwarding-firewall)
 - [IAP tunnel error codes 4003, 4033, 4047](https://ostgate.app/guides/iap-tunnel-errors)
 
-## License and trial
+## Licence and trial
 
 Ostgate is commercial software. It starts with a 7-day free trial, with no sign-up; after
-that it needs a license key. A key covers the whole app on two Macs: $79 a year or $9 a month
+that it needs a licence key. A key covers the whole app on two Macs: $79 a year or $9 a month
 for individuals, $129 per user a year for companies. See [Pricing](https://ostgate.app/pricing).
 Use of the app is governed by the [Terms of Service](https://ostgate.app/terms); see
 [LICENSE](LICENSE).
@@ -128,6 +129,8 @@ Use of the app is governed by the [Terms of Service](https://ostgate.app/terms);
 Your Google tokens are stored in the macOS Keychain. API calls go directly from your Mac to
 Google. There is no telemetry. The [Privacy Policy](https://ostgate.app/privacy) lists what
 each OAuth scope is used for and where data is stored.
+For a security review, the [security overview](https://ostgate.app/security) covers the data
+flow, keys, local listeners, hosts to allow and signing.
 
 ## Support
 

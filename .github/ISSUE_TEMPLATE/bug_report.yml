@@ -33,7 +33,7 @@ body:
         - SFTP
         - Tunnels and forwards
         - Terminal integration (~/.ssh/config)
-        - License and trial
+        - Licence and trial
         - Other
     validations:
       required: true
