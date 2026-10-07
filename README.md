@@ -110,7 +110,8 @@ route through the Cloud Console and gcloud first:
 - [RDP errors on Compute Engine Windows VMs: 0x204, 0x4, license servers](https://ostgate.app/guides/rdp-errors-gcp-windows-vm)
 - [Port forwarding to a GCP VM over IAP](https://ostgate.app/guides/port-forwarding-gcp-vm-iap-mac)
 - [Cloud SQL on a private IP from a Mac](https://ostgate.app/guides/cloud-sql-private-ip-mac)
-- [Reach an internal load balancer through IAP](https://ostgate.app/guides/internal-load-balancer-iap-bastion-mac)
+- [Reach any internal load balancer from a Mac through an IAP bastion](https://ostgate.app/guides/internal-load-balancer-iap-bastion-mac)
+- [Open an internal Cloud Run service from a Mac](https://ostgate.app/guides/cloud-run-functions-internal-mac)
 - [IAP TCP forwarding: the 35.235.240.0/20 firewall rule and IAM checklist](https://ostgate.app/guides/iap-tcp-forwarding-firewall)
 - [IAP tunnel error codes 4003, 4033, 4047](https://ostgate.app/guides/iap-tunnel-errors)
 
