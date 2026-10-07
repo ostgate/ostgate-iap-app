@@ -78,7 +78,7 @@ not public.
 - macOS 26.3 or later, Apple Silicon.
 - A Google account with access to a Google Cloud project that allows IAP TCP forwarding: the
   `roles/iap.tunnelResourceAccessor` role and a firewall rule admitting `35.235.240.0/20`.
-  [Project setup](https://ostgate.app/docs) walks through it.
+  [Project setup](https://ostgate.app/docs/google-cloud-setup) walks through it.
 - No gcloud SDK.
 
 ## Install
@@ -95,6 +95,24 @@ shasum -a 256 Ostgate-<version>.dmg            # compare with the release notes
 spctl -a -vv -t open --context context:primary-signature Ostgate-<version>.dmg
 codesign -dv /Applications/Ostgate.app 2>&1 | grep TeamIdentifier   # C83FBCDMHY
 ```
+
+## Guides
+
+Step-by-step pages on [ostgate.app/guides](https://ostgate.app/guides), each with the manual
+route through the Cloud Console and gcloud first:
+
+- [IAP Desktop for Mac: what carries over](https://ostgate.app/iap-desktop-mac)
+- [SSH to a VM without a public IP from a Mac](https://ostgate.app/guides/ssh-gce-without-public-ip-mac)
+- [GCP VM SSH not working: permission denied, port 22](https://ostgate.app/guides/gcp-vm-ssh-not-working)
+- [SFTP to a GCP VM from a Mac, no external IP](https://ostgate.app/guides/sftp-gcp-vm-mac)
+- [scp and rsync to a GCP VM without an external IP](https://ostgate.app/guides/scp-rsync-gcp-vm-iap-mac)
+- [RDP to a Windows VM on Google Cloud from a Mac](https://ostgate.app/guides/rdp-windows-vm-gcp-mac)
+- [RDP errors on Compute Engine Windows VMs: 0x204, 0x4, license servers](https://ostgate.app/guides/rdp-errors-gcp-windows-vm)
+- [Port forwarding to a GCP VM over IAP](https://ostgate.app/guides/port-forwarding-gcp-vm-iap-mac)
+- [Cloud SQL on a private IP from a Mac](https://ostgate.app/guides/cloud-sql-private-ip-mac)
+- [Reach an internal load balancer through IAP](https://ostgate.app/guides/internal-load-balancer-iap-bastion-mac)
+- [IAP TCP forwarding: the 35.235.240.0/20 firewall rule and IAM checklist](https://ostgate.app/guides/iap-tcp-forwarding-firewall)
+- [IAP tunnel error codes 4003, 4033, 4047](https://ostgate.app/guides/iap-tunnel-errors)
 
 ## License and trial
 
