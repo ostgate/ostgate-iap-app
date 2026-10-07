@@ -13,7 +13,7 @@
   <a href="https://github.com/ostgate/ostgate-iap-app/releases/latest"><b>Download the latest release</b></a> ·
   <a href="https://ostgate.app">Website</a> ·
   <a href="https://ostgate.app/docs">Docs</a> ·
-  <a href="https://ostgate.app/changelog">Release notes</a>
+  <a href="CHANGELOG.md">Release notes</a>
 </p>
 
 <picture>
@@ -40,7 +40,14 @@ not public.
 - **Cloud SQL and Cloud Run.** Open a tunnel to a Cloud SQL private IP, or an internal-only
   Cloud Run service in the browser, through IAP.
 - **Several Google accounts side by side,** each with its own tokens, SSH key, tunnels and
-  settings.
+  settings, in a rail on the left with a problems badge per account and `⌥⌘1…9` to switch.
+- **Sessions that say where they go.** Every SSH and RDP tab carries a session bar with its
+  status, account, `user@vm`, address, route and Disconnect.
+- **Files.** Upload and download whole folders; folders and many small files travel packed
+  with `tar` over the same connection, with nothing written to the VM's disk.
+- **Tunnels that stay up** through relay drops, Wi-Fi outages and sleep, with a choice of the
+  VM's network interface and a per-tunnel access level (Ostgate only, your processes, or any
+  local process).
 - **SSH keys generated on your Mac** (Secure Enclave P-256 where available) and published
   through OS Login or instance metadata. Host keys are verified.
 - **Terminal integration.** One click adds a `Host *.gcp` block to `~/.ssh/config`, so
@@ -92,9 +99,10 @@ codesign -dv /Applications/Ostgate.app 2>&1 | grep TeamIdentifier   # C83FBCDMHY
 ## License and trial
 
 Ostgate is commercial software. It starts with a 7-day free trial, with no sign-up; after
-that it needs a license key for one Mac at a time. For keys, write to
-[support@ostgate.app](mailto:support@ostgate.app). Use of the app is governed by the
-[Terms of Service](https://ostgate.app/terms); see [LICENSE](LICENSE).
+that it needs a license key. A key covers the whole app on two Macs: $79 a year or $9 a month
+for individuals, $129 per user a year for companies. See [Pricing](https://ostgate.app/pricing).
+Use of the app is governed by the [Terms of Service](https://ostgate.app/terms); see
+[LICENSE](LICENSE).
 
 ## Privacy
 
