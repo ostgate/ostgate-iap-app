@@ -74,6 +74,34 @@ not public.
   </tr>
 </table>
 
+## Screen recordings
+
+The recordings use invented projects and VMs.
+
+SSH to a GCP VM without an external IP: ⌘K opens Quick Open, part of the VM's name finds
+it, and Return opens an SSH tab through IAP.
+
+![SSH to a GCP VM without an external IP from a Mac, opened from Quick Open in Ostgate](docs/media/ssh-quick-open.gif)
+
+SFTP to a GCP VM from a Mac: a folder uploads, then a remote folder downloads as one ZIP.
+
+![SFTP to a GCP VM from a Mac: folder upload and ZIP download in Ostgate's file browser](docs/media/sftp-transfer.gif)
+
+Port forwarding over IAP: the PostgreSQL preset forwards port 5432 of a VM to
+`127.0.0.1:5432` on the Mac.
+
+![Port forwarding to a GCP VM over IAP: a PostgreSQL tunnel listening on 127.0.0.1:5432](docs/media/postgres-tunnel.gif)
+
+Several Google accounts in one window: the account rail switches between them, and
+Resources lists only the selected account's VMs.
+
+![Several Google accounts on a Mac: switching Google Cloud accounts in Ostgate's account rail](docs/media/account-switch.gif)
+
+RDP to a Windows VM on Google Cloud from a Mac: the credential form, the connection stages,
+then the Windows desktop in a tab.
+
+![RDP to a Windows VM on Google Cloud from a Mac through IAP, in an Ostgate tab](docs/media/rdp-session.gif)
+
 ## Requirements
 
 - macOS 26.3 or later, Apple Silicon.
