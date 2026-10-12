@@ -3,6 +3,107 @@
 What is new in each version of Ostgate, newest first. The same notes, with what comes next,
 are at [ostgate.app/changelog](https://ostgate.app/changelog).
 
+## 0.0.4 — 12 October 2026
+
+Apple Silicon · macOS 26.3 or later
+
+### Menu bar
+
+- The menu bar icon counts live and failed connections. Its panel lists them by account,
+  failed first, each row with Copy, Stop, Diagnose and Retry. Below them are your open
+  sessions and Quick Connect. Stopping a tunnel that has clients asks for confirmation
+  inside the panel.
+
+### Forwards on ports below 1024
+
+- A forward can listen on a port below 1024, such as 443 or 22, so a web UI that redirects
+  to its own host name, or an SSH clone URL, works without a port number. Such a forward
+  needs a host alias with **Manage /etc/hosts aliases while running** on. Each alias gets
+  its own loopback address between `127.0.0.2` and `127.0.0.254`, so two forwards can both
+  use 443 under different aliases.
+- The Ostgate port helper binds those ports. It runs as root, and macOS starts it only after
+  you allow it once in System Settings › General › Login Items. On the first start of such a
+  forward, Ostgate's own panel names the ports and what the helper does before macOS shows
+  anything; Cancel installs nothing. After **Install and Open Login Items** the forward stays
+  at Starting… for up to five minutes while you allow the helper, then starts. **Install**
+  under **Settings › Connections › Port helper** also adds it, and **Remove** there takes it
+  off.
+- With the port helper installed, starting and stopping a forward with host aliases no
+  longer asks for an administrator password. The helper writes and removes only Ostgate's
+  own blocks in `/etc/hosts` and leaves every other line unchanged. Edits in
+  **Local › Hosts**, aliases under names such as `googleapis.com` or `apple.com`, and macOS
+  users who are not administrators still get the password prompt.
+
+### Administrator password and /etc/hosts
+
+- Before macOS asks for an administrator password, Ostgate shows a panel that says why:
+  which forwards' aliases or how many Hosts edits it writes, or which port's process it
+  stops. macOS 27 no longer shows that reason in its own dialog. Cancel in the panel never
+  opens the macOS dialog.
+- When a forward's alias is not written, because you cancelled or the write failed, the
+  forward keeps listening and its row says so, for example "Hosts alias not written:
+  cancelled", with **Retry**. At Quit, the password prompt names the forwards whose aliases
+  it removes.
+- Ostgate removes its loopback addresses and `/etc/hosts` entries when a forward stops and
+  when you quit. After a crash, it removes them at the next launch.
+
+### Connections and errors
+
+- A forward through a bastion VM comes back sooner after a network drop. When the IAP relay
+  leaves its reconnect unanswered for 60 seconds, the forward opens a new connection at
+  once. In a Wi-Fi off and on test it served again 68 seconds after the network returned,
+  where the previous build took 147 and 168 seconds. SSH tabs resume their session as before
+  and keep their shell.
+- Lists from Google Cloud retry by themselves, up to three more times, when Google answers
+  429 or 503 (waiting as its Retry-After asks, up to 30 seconds) or the connection drops for
+  a moment.
+- Connection failures in forwards, SSH tabs and the Cloud Run proxy say what happened and
+  what to do next, in place of the network library's own error text. A forward whose bastion
+  VM is stopped says so before it dials: *The bastion VM "build-01" isn't running
+  (TERMINATED). Start it, then try again.* Without a network, lists read "You're offline.
+  Check your network connection, then refresh.", and error messages no longer show the
+  request URL. A failed file operation is titled by what failed, such as
+  **Couldn't delete "report.csv"**.
+
+### Remote Desktop
+
+- Keys and clicks reach Windows in the order you made them, without the wait of up to
+  100 ms, so Shift-click and Ctrl-click select files as they do on a PC. Keys typed while
+  the connection is down go out in order once it is back: with Wi-Fi off for 90 seconds, all
+  169 lines typed into Notepad arrived unchanged. Windows highlights buttons and icons under
+  the pointer, because pointer moves between clicks now reach it.
+
+### Tables
+
+- With 20,000 VMs, the Resources table re-sorts in less than half the time it took before,
+  and scrolling stutters less while a refresh comes in. Cloud SQL and Cloud Run use the same
+  table.
+- Each window remembers its Resources column order, widths and hidden columns after you quit
+  and reopen Ostgate. A new window opens with the default columns.
+- In a table sorted by status, a VM whose status changes keeps its place while the pointer
+  is over the table, a menu is open or the row is selected. It moves when the pointer leaves
+  or you refresh. Cloud SQL and Cloud Run tables do the same.
+- A selected row has a light tint instead of a solid fill, and the column header no longer
+  sits on its own band.
+
+### Confirmations and details
+
+- Confirmations show the account, the project and its environment, such as PROD or STAGING:
+  Stop, Start and Unpin on a VM, Stop on a tunnel, Delete and Replace in Files, and deleting
+  an SSH key.
+- SSH Keys and the Event Log show a spinner while they first load. A value cut short in the
+  inspector shows in full when you hold the pointer over it.
+
+Fixed: a tunnel name that already carries its port no longer shows it twice, a reconnect
+that gets no answer from the relay for 60 seconds dials again, a failed SSH connection
+closes its socket at once, and the port helper checks every request more strictly.
+
+## 0.0.3 — 8 October 2026
+
+Apple Silicon · macOS 26.3 or later
+
+- Fixed: on macOS 26, Ostgate quit as soon as a Remote Desktop connection started.
+
 ## 0.0.2 — 7 October 2026
 
 Apple Silicon · macOS 26.3 or later

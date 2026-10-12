@@ -22,11 +22,12 @@
   <img src="docs/screenshots/ssh-light.png" alt="An SSH terminal tab in Ostgate">
 </picture>
 
-Ostgate reaches Google Compute Engine VMs through Google's Identity-Aware Proxy (IAP): SSH
-terminals, RDP desktops, SFTP and TCP tunnels to instances with no public IP and no bastion
-host. It runs entirely on your Mac and talks to Google's APIs as you; there is no Ostgate
-server in the path. If you know Google's Windows-only IAP Desktop, Ostgate is IAP Desktop
-for the Mac: the same IAP TCP forwarding and project setup, as a native macOS app.
+Ostgate reaches Google Compute Engine (GCE) VMs on Google Cloud (GCP) through Identity-Aware
+Proxy (IAP): SSH terminals, RDP desktops, SFTP and TCP tunnels to instances with no public
+IP and no bastion host. It runs entirely on your Mac and talks to Google's APIs as you;
+there is no Ostgate server in the path. If you know Google's Windows-only IAP Desktop,
+Ostgate is IAP Desktop for the Mac: the same IAP TCP forwarding and project setup, as a
+native macOS app.
 
 This repository hosts the release builds, release notes and issue tracker. The source code is
 not public.
@@ -38,10 +39,14 @@ not public.
   MySQL, SQL Server, Redis and HTTP(S).
 - **Bastion forwards.** One SSH session through a chosen VM carries several forwards to
   anything that VM can reach, such as an internal load balancer or a Cloud SQL private IP.
+  A forward with a host alias can listen on a port below 1024, such as 443 or 22, through
+  the Ostgate port helper, which you allow once in System Settings.
 - **Cloud SQL and Cloud Run.** Open a tunnel to a Cloud SQL private IP, or an internal-only
   Cloud Run service in the browser, through IAP.
 - **Several Google accounts side by side,** each with its own tokens, SSH key, tunnels and
   settings, in a rail on the left with a problems badge per account and `⌥⌘1…9` to switch.
+- **Menu bar.** The icon counts live and failed connections; its panel lists them by
+  account with Copy, Stop, Diagnose and Retry, plus open sessions and Quick Connect.
 - **Sessions that say where they go.** Every SSH and RDP tab carries a session bar with its
   status, account, `user@vm`, address, route and Disconnect.
 - **Files.** Upload and download whole folders; folders and many small files travel packed
@@ -136,24 +141,32 @@ Step-by-step pages on [ostgate.app/guides](https://ostgate.app/guides), each wit
 route through the Cloud Console and gcloud first:
 
 - [IAP Desktop for Mac: what carries over](https://ostgate.app/iap-desktop-mac)
+- [gcloud start-iap-tunnel vs Ostgate: IAP on a Mac](https://ostgate.app/guides/gcloud-start-iap-tunnel-vs-ostgate)
 - [SSH to a VM without a public IP from a Mac](https://ostgate.app/guides/ssh-gce-without-public-ip-mac)
 - [GCP VM SSH not working: permission denied, port 22](https://ostgate.app/guides/gcp-vm-ssh-not-working)
+- [VS Code Remote-SSH to a GCP VM through IAP on a Mac](https://ostgate.app/guides/vscode-remote-ssh-gcp-vm-iap-mac)
+- [Several Google accounts on a Mac with gcloud and Ostgate](https://ostgate.app/guides/multiple-google-accounts-gcp-mac)
 - [SFTP to a GCP VM from a Mac, no external IP](https://ostgate.app/guides/sftp-gcp-vm-mac)
 - [scp and rsync to a GCP VM without an external IP](https://ostgate.app/guides/scp-rsync-gcp-vm-iap-mac)
 - [RDP to a Windows VM on Google Cloud from a Mac](https://ostgate.app/guides/rdp-windows-vm-gcp-mac)
 - [RDP errors on Compute Engine Windows VMs: 0x204, 0x4, license servers](https://ostgate.app/guides/rdp-errors-gcp-windows-vm)
+- [Set or reset a GCP Windows VM password from a Mac](https://ostgate.app/guides/gcp-windows-vm-password)
 - [Port forwarding to a GCP VM over IAP](https://ostgate.app/guides/port-forwarding-gcp-vm-iap-mac)
 - [Cloud SQL on a private IP from a Mac](https://ostgate.app/guides/cloud-sql-private-ip-mac)
+- [DBeaver, DataGrip or TablePlus to a Cloud SQL private IP](https://ostgate.app/guides/cloud-sql-dbeaver-datagrip-tableplus-mac)
+- [Forward ports 443 and 22 to your Mac over IAP](https://ostgate.app/guides/forward-ports-below-1024-mac)
 - [Reach any internal load balancer from a Mac through an IAP bastion](https://ostgate.app/guides/internal-load-balancer-iap-bastion-mac)
 - [Open an internal Cloud Run service from a Mac](https://ostgate.app/guides/cloud-run-functions-internal-mac)
 - [IAP TCP forwarding: the 35.235.240.0/20 firewall rule and IAM checklist](https://ostgate.app/guides/iap-tcp-forwarding-firewall)
+- [IAP tunnel slow or disconnecting on a Mac](https://ostgate.app/guides/iap-tunnel-slow-disconnecting-mac)
 - [IAP tunnel error codes 4003, 4033, 4047](https://ostgate.app/guides/iap-tunnel-errors)
 
 ## Licence and trial
 
 Ostgate is commercial software. It starts with a 7-day free trial, with no sign-up; after
-that it needs a licence key. A key covers the whole app on two Macs: $79 a year or $9 a month
-for individuals, $129 per user a year for companies. See [Pricing](https://ostgate.app/pricing).
+that it needs a licence key, which covers the whole app. Personal: $79 a year or $9 a month,
+one person on two Macs. Business: $129 per user a year or $14 per user a month, two Macs per
+user. See [Pricing](https://ostgate.app/pricing).
 Use of the app is governed by the [Terms of Service](https://ostgate.app/terms); see
 [LICENSE](LICENSE).
 
