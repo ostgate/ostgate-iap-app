@@ -102,6 +102,11 @@ then the Windows desktop in a tab.
 
 ![RDP to a Windows VM on Google Cloud from a Mac through IAP, in an Ostgate tab](docs/media/rdp-session.gif)
 
+Cloud SQL on a private IP: Open Tunnel… in the Cloud SQL tab forwards a PostgreSQL
+instance through a bastion VM over IAP to `127.0.0.1:5432`.
+
+![Cloud SQL private IP from a Mac: a tunnel through a bastion VM over IAP to 127.0.0.1:5432 in Ostgate](docs/media/cloudsql-tunnel.gif)
+
 ## Requirements
 
 - macOS 26.3 or later, Apple Silicon.
