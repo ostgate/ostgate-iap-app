@@ -3,6 +3,43 @@
 What is new in each version of Ostgate, newest first. The same notes, with what comes next,
 are at [ostgate.app/changelog](https://ostgate.app/changelog).
 
+## 0.0.6 — 20 October 2026
+
+Apple Silicon · macOS 15 or later
+
+- Ostgate runs on macOS 15 Sequoia and on macOS 26.0 to 26.2. Versions up to 0.0.5 needed
+  macOS 26.3 or later. It still runs only on Apple Silicon Macs.
+- The × on a session tab gets a rounded highlight and a full-strength glyph while the
+  pointer is on it.
+
+## 0.0.5 — 18 October 2026
+
+Apple Silicon · macOS 26.3 or later
+
+- SSH connects to VMs that require OS Login certificates, where
+  `enable-oslogin-certificates` is `TRUE`. Such a VM refused the key Ostgate imported with
+  *Permission denied (publickey)*. Ostgate now has OS Login sign the key for that VM and logs
+  in with the certificate, which Google issues for five minutes and Ostgate keeps in memory
+  only. When your account has no POSIX account in the project yet, Ostgate creates it
+  first. An RSA private key file of your own cannot be signed, and the SSH tab says so.
+- Cloud SQL instances that have only a Private Service Connect address, as new instances in
+  new projects now do, open a tunnel through their PSC endpoint. Ostgate looks for the
+  endpoint in the instance's project and the consumer projects it allows, shows the
+  endpoint's address in the Private IP column, and offers bastion VMs on the endpoint's
+  network first. Without an endpoint the column reads "no endpoint" and **Open Tunnel…**
+  says which projects it searched. The inspector also shows the instance's DNS name.
+- The bastion picker in **Open Tunnel…** and **Open Proxy…** reloads your pinned projects'
+  VMs when it opens, so a VM you started in the Cloud console is offered without a Refresh.
+  When a project's VMs can't be listed, the picker shows the project and the error.
+- The disk image opens as a window with Ostgate on the left, Applications on the right and
+  an arrow between them.
+- Remote Desktop runs on FreeRDP 3.32.2 and OpenSSL 3.6.5. They fix five FreeRDP advisories
+  and CVE-2026-35189 in OpenSSL, which a malicious VM could trigger during an RDP session.
+
+Fixed: a clicked row in Local Ports, Hosts and Connections keeps its accent tint and ↑ ↓
+move from it, the sidebar's selected item stays gray, and a dragged column shows one sort
+arrow.
+
 ## 0.0.4 — 12 October 2026
 
 Apple Silicon · macOS 26.3 or later

@@ -114,7 +114,7 @@ instance through a bastion VM over IAP to `127.0.0.1:5432`.
 
 ## Requirements
 
-- macOS 26.3 or later, Apple Silicon.
+- macOS 15 or later, Apple Silicon.
 - A Google account with access to a Google Cloud project that allows IAP TCP forwarding: the
   `roles/iap.tunnelResourceAccessor` role and a firewall rule admitting `35.235.240.0/20`.
   [Project setup](https://ostgate.app/docs/google-cloud-setup) walks through it.
