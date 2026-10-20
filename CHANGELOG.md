@@ -8,9 +8,8 @@ are at [ostgate.app/changelog](https://ostgate.app/changelog).
 Apple Silicon · macOS 15 or later
 
 - Ostgate runs on macOS 15 Sequoia and on macOS 26.0 to 26.2. Versions up to 0.0.5 needed
-  macOS 26.3 or later. It still runs only on Apple Silicon Macs.
-- The × on a session tab gets a rounded highlight and a full-strength glyph while the
-  pointer is on it.
+  macOS 26.3 or later.
+- The × on a session tab is highlighted while the pointer is on it.
 
 ## 0.0.5 — 18 October 2026
 
