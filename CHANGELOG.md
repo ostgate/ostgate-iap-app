@@ -3,6 +3,22 @@
 What is new in each version of Ostgate, newest first. The same notes, with what comes next,
 are at [ostgate.app/changelog](https://ostgate.app/changelog).
 
+## 0.0.7 — 29 October 2026
+
+Apple Silicon · macOS 15 or later
+
+- The welcome screen says why Google asks for access to Google Cloud, what each VM's
+  project needs (a firewall rule from `35.235.240.0/20` and the Compute Viewer and
+  IAP-secured Tunnel User roles), and that the 7-day trial needs no sign-up. It links to the
+  IAP checklist.
+- **Help › Setup Guide** opens the install and sign-in guide.
+- When **Pin Project…** lists nothing, it says which case you are in: "No projects visible"
+  when the account sees no projects, or "Project listing denied" when Google refuses the
+  listing with HTTP 403. Each points to what to check.
+
+Fixed: after Reconnect, an RDP tab's tooltip shows the time of the latest connect, and a
+tab's × drops its hover highlight when it hides.
+
 ## 0.0.6 — 20 October 2026
 
 Apple Silicon · macOS 15 or later
