@@ -100,6 +100,20 @@ not public.
       </picture>
     </td>
   </tr>
+  <tr>
+    <td>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/cloudsql-dark.png">
+        <img src="docs/screenshots/cloudsql-light.png" alt="Resources: Cloud SQL instances across projects and accounts">
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/cloudshell-dark.png">
+        <img src="docs/screenshots/cloudshell-light.png" alt="Cloud Shell: one card per account, one running and one stopped, with Open Terminal and Browse Files">
+      </picture>
+    </td>
+  </tr>
 </table>
 
 ## Screen recordings
