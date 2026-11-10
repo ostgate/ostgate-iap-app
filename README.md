@@ -177,6 +177,7 @@ route through the Cloud Console and gcloud first:
 - [Port forwarding to a GCP VM over IAP](https://ostgate.app/guides/port-forwarding-gcp-vm-iap-mac)
 - [Cloud SQL on a private IP from a Mac](https://ostgate.app/guides/cloud-sql-private-ip-mac)
 - [DBeaver, DataGrip or TablePlus to a Cloud SQL private IP](https://ostgate.app/guides/cloud-sql-dbeaver-datagrip-tableplus-mac)
+- [Connect to Memorystore Redis or Valkey from a local machine](https://ostgate.app/guides/memorystore-redis-valkey-from-mac)
 - [Forward ports 443 and 22 to your Mac over IAP](https://ostgate.app/guides/forward-ports-below-1024-mac)
 - [Reach any internal load balancer from a Mac through an IAP bastion](https://ostgate.app/guides/internal-load-balancer-iap-bastion-mac)
 - [Open an internal Cloud Run service from a Mac](https://ostgate.app/guides/cloud-run-functions-internal-mac)
