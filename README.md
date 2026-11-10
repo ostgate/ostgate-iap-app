@@ -5,8 +5,8 @@
 <h1 align="center">Ostgate</h1>
 
 <p align="center">
-  SSH, RDP, SFTP and TCP tunnels to Google Compute Engine VMs through Identity-Aware Proxy.<br>
-  A native macOS app. No public IPs, no bastion hosts, no gcloud.
+  SSH, RDP, SFTP and TCP tunnels to Google Compute Engine VMs through Identity-Aware Proxy,<br>
+  GKE clusters and Cloud Shell. A native macOS app. No public IPs, no gcloud.
 </p>
 
 <p align="center">
@@ -27,7 +27,8 @@ Proxy (IAP): SSH terminals, RDP desktops, SFTP and TCP tunnels to instances with
 IP and no bastion host. It runs entirely on your Mac and talks to Google's APIs as you;
 there is no Ostgate server in the path. If you know Google's Windows-only IAP Desktop,
 Ostgate is IAP Desktop for the Mac: the same IAP TCP forwarding and project setup, as a
-native macOS app.
+native macOS app. Since 0.0.8 it also browses GKE clusters, private ones included, and opens
+each account's Cloud Shell.
 
 This repository hosts the release builds, release notes and issue tracker. The source code is
 not public.
@@ -43,6 +44,14 @@ not public.
   the Ostgate port helper, which you allow once in System Settings.
 - **Cloud SQL and Cloud Run.** Open a tunnel to a Cloud SQL private IP, or an internal-only
   Cloud Run service in the browser, through IAP.
+- **GKE clusters.** Every pinned project's clusters in one list; pods, workloads, Services,
+  Ingresses, ConfigMaps, Secrets, nodes and events with live updates, read-only YAML, pod
+  logs, port-forwards, a shell in a container, restarts, cost and rightsizing, security
+  findings, Workload Identity and traffic-path checks. Private clusters work through the DNS
+  endpoint, the Connect gateway or a bastion VM over IAP. **Use with kubectl…** lets kubectl
+  and k9s sign in through Ostgate, without gcloud.
+- **Cloud Shell.** Each account's Cloud Shell in a terminal tab, with gcloud signed in as that
+  account, and in a file browser.
 - **Several Google accounts side by side,** each with its own tokens, SSH key, tunnels and
   settings, in a rail on the left with a problems badge per account and `⌥⌘1…9` to switch.
 - **Menu bar.** The icon counts live and failed connections; its panel lists them by
@@ -74,6 +83,20 @@ not public.
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tunnels-dark.png">
         <img src="docs/screenshots/tunnels-light.png" alt="Tunnels and bastion forwards">
+      </picture>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/gke-pods-dark.png">
+        <img src="docs/screenshots/gke-pods-light.png" alt="GKE: a cluster's pods with CPU and memory use">
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/gke-logs-dark.png">
+        <img src="docs/screenshots/gke-logs-light.png" alt="GKE: a pod's logs in a tab, with search">
       </picture>
     </td>
   </tr>
@@ -160,6 +183,26 @@ route through the Cloud Console and gcloud first:
 - [IAP TCP forwarding: the 35.235.240.0/20 firewall rule and IAM checklist](https://ostgate.app/guides/iap-tcp-forwarding-firewall)
 - [IAP tunnel slow or disconnecting on a Mac](https://ostgate.app/guides/iap-tunnel-slow-disconnecting-mac)
 - [IAP tunnel error codes 4003, 4033, 4047](https://ostgate.app/guides/iap-tunnel-errors)
+- [The Azure Bastion and AWS Session Manager equivalent in GCP](https://ostgate.app/guides/azure-bastion-equivalent-gcp)
+- [gcloud crashed (DatabaseError): file is not a database](https://ostgate.app/guides/gcloud-file-is-not-a-database)
+- [PuTTY and WinSCP for GCP VMs on a Mac, over IAP](https://ostgate.app/guides/putty-winscp-gcp-vm-mac)
+- [Termius with GCP VMs over IAP on a Mac](https://ostgate.app/guides/termius-gcp-vm-iap-mac)
+- [Royal TSX with GCP VMs over IAP on a Mac](https://ostgate.app/guides/royal-tsx-gcp-vm-iap-mac)
+- [Let Claude Code or Cursor work on a private GCP VM](https://ostgate.app/guides/ai-agent-ssh-gcp-vm-iap-mac)
+
+GKE:
+
+- [kubectl to a private GKE cluster from a Mac](https://ostgate.app/guides/private-gke-cluster-kubectl-mac)
+- [kubectl for GKE without gcloud on a Mac](https://ostgate.app/guides/kubectl-gke-without-gcloud-mac)
+- [gke-gcloud-auth-plugin on a Mac](https://ostgate.app/guides/gke-gcloud-auth-plugin-mac)
+- [kubectl times out on a GKE cluster: find the setting that blocks it](https://ostgate.app/guides/gke-kubectl-timeout-authorized-networks)
+- [x509: certificate signed by unknown authority on the GKE DNS endpoint](https://ostgate.app/guides/gke-dns-endpoint-x509-unknown-authority)
+- [Port-forward to a GKE Service that survives pod restarts](https://ostgate.app/guides/kubectl-port-forward-gke-mac)
+- [kubectl exec on GKE: pods/exec forbidden, the wrong container, no shell](https://ostgate.app/guides/kubectl-exec-forbidden-gke)
+- [kubectl logs from all pods of a Deployment at once](https://ostgate.app/guides/kubectl-logs-all-pods-deployment)
+- [Which pods use this ConfigMap or Secret?](https://ostgate.app/guides/kubernetes-configmap-secret-used-by)
+- [OOMKilled and exit code 137 on GKE](https://ostgate.app/guides/gke-oomkilled-exit-code-137)
+- [GKE Ingress shows unhealthy backends while pods are ready](https://ostgate.app/guides/gke-ingress-unhealthy-backends)
 
 ## Licence and trial
 

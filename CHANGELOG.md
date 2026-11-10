@@ -3,6 +3,47 @@
 What is new in each version of Ostgate, newest first. The same notes, with what comes next,
 are at [ostgate.app/changelog](https://ostgate.app/changelog).
 
+## 0.0.8 — 10 November 2026
+
+Apple Silicon · macOS 15 or later
+
+- **GKE** gets its own sidebar area (⌘3) with the clusters of every pinned project of every
+  signed-in account. Open a cluster to browse its pods, workloads, Services, Ingresses,
+  Network Policies, ConfigMaps, Secrets, volumes, nodes, namespaces and events. CPU, memory
+  and volume use come from Cloud Monitoring, with nothing installed in the cluster. Any
+  object opens as read-only YAML; Secret values stay hidden until **Show**.
+- Private clusters work through the DNS endpoint, the Connect gateway, a VPN or a bastion VM
+  over IAP. **Diagnose Access…** names the setting that blocks a cluster and the gcloud
+  command that fixes it.
+- **Use with kubectl…** adds a cluster to `~/.kube/ostgate`, so kubectl, k9s and other tools
+  sign in through Ostgate without gcloud or `gke-gcloud-auth-plugin`.
+- Pod logs in a tab, **Show Logs (All Pods)** for a workload, **Forward Port…** on a pod or
+  Service, **Open Shell…** in a container, **Restart…** and **Delete Pod…**. Each
+  confirmation counts the pods that go down at once.
+- The object inspector links related objects and lists what uses a ConfigMap or Secret. A
+  cluster's Overview counts its security findings, **Open Cost** prices the cluster at list
+  prices with rightsizing from 14 days of use, a pod's Workload Identity chain is checked link
+  by link, and a Service, Ingress or Gateway shows its traffic path down to each pod.
+- **Notify Me About Problems** on a cluster sends macOS notifications for crash loops,
+  out-of-memory kills, stuck Pending pods, unhealthy nodes and stalled rollouts.
+- **Cloud Shell** gets its own area (⌘4). Each account's Cloud Shell opens in a terminal tab
+  with gcloud signed in as that account, and in a file browser. Connections, Local and
+  Settings move to ⌘5, ⌘6 and ⌘7.
+- A banner says when a newer Ostgate is out, and **Check for Updates…** asks on request.
+  Ostgate never installs anything by itself.
+- **Buy a License…** in the trial banner and in Settings › License opens the pricing page.
+- Terminal tabs draw with Metal; **Draw with Metal** in Settings › Terminal turns it off.
+- View › **Back** (⌘[) and **Forward** (⌘]), Quick Open over the open cluster's objects,
+  Help › **Keyboard Shortcuts**, and a window that narrows to half a 13-inch screen with the
+  inspector hidden.
+- A tunnel or forward to port 80 is offered local port 8080, and Ostgate no longer offers a
+  port that browsers refuse to open.
+- The [privacy policy](https://ostgate.app/privacy) lists the new Google API calls. The OAuth
+  scopes are the same as before.
+
+Fixed: a tab's close button takes the first click, and opening a tab no longer shows the view
+behind it for a moment.
+
 ## 0.0.7 — 29 October 2026
 
 Apple Silicon · macOS 15 or later
