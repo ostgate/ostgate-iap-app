@@ -3,6 +3,26 @@
 What is new in each version of Ostgate, newest first. The same notes, with what comes next,
 are at [ostgate.app/changelog](https://ostgate.app/changelog).
 
+## 0.0.9 — 11 November 2026
+
+Apple Silicon · macOS 15 or later
+
+- GKE stays responsive on large clusters. The Overview, the kind list and the tables are
+  built off the main thread, an idle Overview no longer keeps the window busy, and a pod
+  row's age or usage tick redraws only its own cells.
+- Pods, Deployments and the other core kinds keep their watches when you switch kinds, so
+  going back shows live rows at once.
+- **GKE RECOMMENDATIONS** lists findings per workload, under the workload's name. Custom
+  machine types such as `n2d-custom-16-32768` get a price, and the day's Billing Catalog is
+  kept on the Mac across launches.
+- A Logs tab keeps at most 64 MiB of text, so a stream of long lines no longer grows without
+  limit.
+
+Fixed: a namespace change shows "Loading pods…" until the new list arrives, sorts it at once
+and keeps the Namespace column; Back and Forward work across namespaces; two windows on one
+bastion-only cluster no longer end each other's link; a YAML tab reopens its link after the
+Mac wakes; an account that must sign in again says so in the GKE and Resources lists.
+
 ## 0.0.8 — 10 November 2026
 
 Apple Silicon · macOS 15 or later
